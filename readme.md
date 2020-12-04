@@ -1,14 +1,9 @@
-# Example Readme file v1.0
+# Week 9 - Portfolio Tasks
 
-## Sub heading 
+## Part 1. Create a basic Django app that includes:
 
-- List item 1
-- List item 2:
-  - Sub-list item 1
-  - Sub-list item 2
-  - Sub-list item 3
-- List item 3:
-
-### Notes
-
-Add hash symbols for smaller and smaller headings
+- Two models defined in models.py
+- sqlite3 database (with migrated Models)
+- Two routes/views in views.py
+- Views can return HTTP Response or render a template
+- Appropriate config of URLs
