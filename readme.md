@@ -10,7 +10,6 @@ App is a Chat box display where contributers must be added to the Member list.
 
 - Any user can choose any author, obviously addition of some login functionality would be a good idea
 - Admin functionality, with the ability for an admin to delete messages
-- 
 
 ## Part 1. Create a basic Django app that includes:
 
