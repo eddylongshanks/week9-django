@@ -3,8 +3,10 @@
 ## Instructions for use
 
 App is a Chat box display where contributers must be added to the Member list.
-- Add yourself to the list
-- Click "View the Chat box" to begin chatting 
+- Click "View Users" to view the member list
+- Click "Add User" to add yourself to the list of chatters
+- Fill in the form and click "Add"
+- Click "View Chat Box" to start chatting
 
 ### Future improvements
 
