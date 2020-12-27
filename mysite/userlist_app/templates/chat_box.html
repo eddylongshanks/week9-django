@@ -1,0 +1,47 @@
+{% extends "public_template.html" %}
+
+{% block title %}Chat Box{% endblock %}
+
+{% block main %}
+
+
+<div class="container">
+    <h2>Chat Box</h2>
+    <div class="row-chat">
+        <div class="col-chat">
+            {% for message_item in chat_messages %}
+            <div class="row-message">
+                <div class="col-message">
+                    <div class="message">
+                        {{ message_item.message }}
+                    </div>
+                    <div class="author">
+                        - {{ message_item.author }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %} 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form action="{% url 'chat_box' %}" method="POST">
+                {% csrf_token %}
+
+                <div class="form-group">
+                <label>Message</label>
+                <input type="text" class="form-control" id="message" name="message">
+                </div> 
+
+                <div class="form-group">
+                <label>Author</label>
+                <input type="text" class="form-control" id="author" name="author">
+                </div> 
+
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>  
+        </div>
+    </div>
+</div>
+
+{% endblock %}

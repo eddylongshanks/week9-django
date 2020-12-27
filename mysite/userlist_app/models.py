@@ -12,3 +12,13 @@ class User(models.Model):
                   f'Country: {self.country}' \
 
         return obj_str
+
+class ChatMessage(models.Model):
+    author = models.CharField(max_length=80, null=False)
+    message = models.CharField(max_length=400, null=False)
+
+    def __str__(self):
+        obj_str = f'Message: {self.message}, ' \
+                  f'Author: {self.author}, ' \
+    
+        return obj_str

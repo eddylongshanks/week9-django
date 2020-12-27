@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages 
 from userlist_app.models import User
+from userlist_app.models import ChatMessage
 
 def test(request):
     return HttpResponse("This is a test")
@@ -43,3 +44,25 @@ def add_user(request):
         return redirect("/")
 
     return render(request, "add_user.html")
+
+def chat_box(request):
+    if request.method == "POST":
+
+        details = {}
+
+        details['message'] = request.POST.get('message','')
+        details['author'] = request.POST.get('author','')
+
+        new_message = ChatMessage(message=details['message'],
+                                    author=details['author'])
+        
+        print(new_message)
+
+        new_message.save()
+
+        return redirect("/chat_box")
+
+    chat_messages = ChatMessage.objects.all()
+    return render(request, 'chat_box.html', {
+        'chat_messages': chat_messages,
+    })

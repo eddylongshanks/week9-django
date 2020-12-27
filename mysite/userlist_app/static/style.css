@@ -1,3 +1,11 @@
+/* Debug */
+
+/* div {
+    border: 1px solid black;
+} */
+
+/* End Debug */
+
 :root{
     --basedark: #593E3E;
     --baselight: #E3DCDC;
@@ -27,7 +35,28 @@ div.col{
     padding: 75px;
     margin-top: 10px;
 }
-  
+
+div.row-chat {
+    margin: 10px;
+}
+
+div.row-message {
+    margin-bottom: 10px;    
+}
+
+div.col-message {
+    padding: 10px;
+    border: 1px solid var(--compldark);
+    background-color: var(--basemid);
+    border-radius: 6px;
+}
+
+div.author {
+    font-size: smaller;
+    padding-top: 5px;
+    padding-left: 8px;
+}
+
 input {
     width: 100%;
     padding: 10px;
