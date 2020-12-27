@@ -21,11 +21,6 @@ def add_user(request):
         details['second-name'] = request.POST.get('second-name','')
         details['country'] = request.POST.get('country','')        
 
-        # _error_summary = get_errors(_form)
-
-        # if _error_summary:            
-        #     return render_template("add_user.html", error_summary=_error_summary)
-
         invalid_input = list()
 
         for i, k in details.items():
@@ -48,17 +43,3 @@ def add_user(request):
         return redirect("/")
 
     return render(request, "add_user.html")
-
-
-# def get_errors(form_to_validate):
-#         invalid_input = list()
-
-#         field_name_provider = FieldNameProvider()
-
-#         for i, k in form_to_validate.items():
-#             if k == "":
-#                 invalid_input.append(field_name_provider.get_name(i))
-        
-#         if invalid_input:
-#             error_summary = f"Following information is required: {', '.join(invalid_input)}"
-#             return error_summary
