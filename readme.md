@@ -2,7 +2,7 @@
 
 ## Instructions for use
 
-App is a Chat box display where contributers must be added to the Member list.
+Userlist_App is a Chat box display where contributers must be added to the Member list.
 - Click "View Users" to view the member list
 - Click "Add User" to add yourself to the list of chatters
 - Fill in the form and click "Add"
