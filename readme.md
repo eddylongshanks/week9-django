@@ -8,6 +8,10 @@ Userlist_App is a Chat box display where contributers must be added to the Membe
 - Fill in the form and click "Add"
 - Click "View Chat Box" to start chatting
 
+Admin account details:
+username: testuser
+password: testuser
+
 ### Future improvements
 
 - Any user can choose any author, obviously addition of some login functionality would be a good idea
