@@ -6,7 +6,7 @@
 
 
 <div class="container">
-    <h2>Chat Box</h2>
+    <h1>Chat Box</h1>
     <div class="row-chat">
         <div class="col-chat">
             {% for message_item in chat_messages %}
@@ -25,6 +25,15 @@
     </div>
     <div class="row">
         <div class="col">
+
+            {% if messages %}
+                <ul class="text-danger">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+
             <form action="{% url 'chat_box' %}" method="POST">
                 {% csrf_token %}
 
@@ -35,7 +44,11 @@
 
                 <div class="form-group">
                 <label>Author</label>
-                <input type="text" class="form-control" id="author" name="author">
+                <select class="form-control" id="author" name="author">
+                    {% for user in all_users %}
+                    <option value="{{ user.firstname }}">{{ user.firstname }}</option>
+                    {% endfor %}
+                </select>
                 </div> 
 
                 <button type="submit" class="btn btn-primary">Send</button>

@@ -63,6 +63,8 @@ def chat_box(request):
         return redirect("/chat_box")
 
     chat_messages = ChatMessage.objects.all()
+    all_users = User.objects.all()
     return render(request, 'chat_box.html', {
         'chat_messages': chat_messages,
+        'all_users': all_users,
     })

@@ -66,6 +66,16 @@ input {
     border: 2px solid var(--compldark);
 }
 
+select {
+    display: block;
+    width: 40%;
+    padding: 5px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 2px solid var(--compldark);
+}
+
 button {
     padding: 8px 24px;
     margin: 10px 0;
