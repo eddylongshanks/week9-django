@@ -1,0 +1,36 @@
+{% extends "public_template.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Member List</h1>
+            <hr>
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                    <th>First Name</th>
+                    <th>Second Name</th>
+                    <th>Country</th>
+                    </tr>
+                </thead>    
+                {% for user in all_users %}
+                    <tr>
+                        <td>{{ user.firstname }}</td>
+                        <td>{{ user.secondname }}</td>
+                        <td>{{ user.country }}</td>
+                    </tr>
+                {% endfor %} 
+            </table>
+
+            <a href="/add_user"><button type="button">Add User</button></a>
+            <a href="/"><button type="button">View Chat Box</button></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
