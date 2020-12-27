@@ -6,35 +6,39 @@
 
 <div class="container">
     <div class="row">
-      <div class="col">
-          <h1>Member List</h1>
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                    <th>ID</th>
-                    <th>First Name</th>
-                    <th>Second Name</th>
-                    <th>Country</th>
-                    </tr>
-                </thead>    
-                {% for user in all_users %}
-                    <tr>
-                        <td>{{ user.id }}</td>
-                        <td>{{ user.firstname }}</td>
-                        <td>{{ user.secondname }}</td>
-                        <td>{{ user.country }}</td>
-                    </tr>
-                {% endfor %} 
-            </table>
+        <div class="col">
+        <h1>Member List</h1>
+        <hr>
 
-            <form action="/add_user" method="get">
-                <button type="submit">Add User</button>                
-            </form>
-            <form action="/chat_box" method="get">
-                <button type="submit">View Chat Box</button>                
-            </form>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                <th>First Name</th>
+                <th>Second Name</th>
+                <th>Country</th>
+                </tr>
+            </thead>    
+            {% for user in all_users %}
+                <tr>
+                    <td>{{ user.firstname }}</td>
+                    <td>{{ user.secondname }}</td>
+                    <td>{{ user.country }}</td>
+                </tr>
+            {% endfor %} 
+        </table>
+
+        <a href="/add_user"><button type="button">Add User</button></a>
+        <a href="/chat_box"><button type="button">View Chat Box</button></a>
+
+        <!-- <form action="/add_user" method="get">
+            <button type="submit">Add User</button>                
+        </form>
+
+        <form action="/chat_box" method="get">
+            <button type="submit">View Chat Box</button>                
+        </form> -->
         </div>
     </div>
-  </div>
+</div>
 
 {% endblock %}

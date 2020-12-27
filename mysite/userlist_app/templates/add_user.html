@@ -5,41 +5,42 @@
 {% block main %}
 
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>Add New User</h1>
-      <hr>
+    <div class="row">
+        <div class="col">
+            <h1>Add New User</h1>
+            <hr>
 
-      {% if messages %}
-          <ul class="text-danger">
-          {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-          {% endfor %}
-          </ul>
-      {% endif %}
+            {% if messages %}
+                <ul class="text-danger">
+                {% for message in messages %}
+                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
 
-      <form action="{% url 'add_user' %}" method="POST">
-        {% csrf_token %}
+            <form action="{% url 'add_user' %}" method="POST">
+                {% csrf_token %}
 
-        <div class="form-group">
-          <label>First Name</label>
-          <input type="text" class="form-control" id="first-name" name="first-name">
-        </div> 
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" id="first-name" name="first-name">
+                </div> 
 
-        <div class="form-group">
-          <label>Second Name</label>
-          <input type="text" class="form-control" id="second-name" name="second-name">
-        </div>   
+                <div class="form-group">
+                    <label>Second Name</label>
+                    <input type="text" class="form-control" id="second-name" name="second-name">
+                </div>   
 
-        <div class="form-group">
-          <label>Country</label>
-          <input type="text" class="form-control" id="country" name="country">
+                <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" class="form-control" id="country" name="country">
+                </div>
+
+                <button type="submit">Add</button>
+                <a href="../"><button type="button">Cancel</button></a>
+            </form>  
         </div>
-
-        <button type="submit" class="btn btn-primary">Add</button>
-      </form>  
     </div>
-  </div>
 </div>
 
 {% endblock %}
